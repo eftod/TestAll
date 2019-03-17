@@ -1,0 +1,20 @@
+CREATE TABLE `new_schema`.`Products` (
+  `ID_Products` INT,
+  `Name_Products` VARCHAR(45));
+
+CREATE TABLE `new_schema`.`Ñategory` (
+  `ID_Ñategory` INT,
+  `Name_Ñategory` VARCHAR(45));
+
+  
+CREATE TABLE `new_schema`.`Ñonnection` (
+  `ID_Products` INT,
+  `ID_Ñategory` INT);
+
+
+SELECT
+  Products.Name_Products, Ñategory.Name_Ñategory
+  FROM
+  Ñonnection
+  lEFT JOIN Products ON Products.ID_Products = Ñonnection.ID_Products
+  LEFT JOIN Ñategory ON Ñategory.ID_Ñategory = Ñonnection.ID_Ñategory;
